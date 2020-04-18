@@ -6,6 +6,11 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   }
+  ,
+  {
+    path: 'generar',
+    loadChildren: () => import('./generar/generar.module').then(m => m.GenerarPageModule)
+  }
 ];
 @NgModule({
   imports: [
@@ -13,4 +18,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

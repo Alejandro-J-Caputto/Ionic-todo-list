@@ -1,0 +1,31 @@
+<ion-list>
+
+
+
+  <ion-item-sliding *ngFor="let list of wish.listas | filterCompleted:terminada ">
+    <ion-item (click)='selectedList(list)' detail>
+      <ion-label>{{list.titulo}}</ion-label>
+      <ion-note color="tertiary" slot="end"> {{list.items.length}} Items</ion-note>
+    </ion-item>
+    <ion-item-options side="start">
+
+      <ion-item-option color="primary" (click)="editarNombre( list )">
+        <ion-icon name='create' slot="icon-only"></ion-icon>
+      </ion-item-option>
+    </ion-item-options>
+    <ion-item-options side="end">
+      <ion-item-option (click)="borrarLista( list )" color="danger">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+
+      </ion-item-option>
+
+    </ion-item-options>
+
+
+  </ion-item-sliding>
+
+
+
+
+
+</ion-list>
